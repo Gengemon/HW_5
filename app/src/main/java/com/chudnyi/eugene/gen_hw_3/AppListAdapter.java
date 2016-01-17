@@ -30,7 +30,7 @@ public class AppListAdapter extends BaseAdapter {
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
-    @Override 
+    @Override
     public int getCount() {
 
         return packages.size();

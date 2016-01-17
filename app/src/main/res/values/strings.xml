@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ДЗ №5</string>
-    <string name="action_settings">Settings</string>
+    <string name="app_name">HW 5</string>
+    <string name="action_settings">SETTINGS</string>
     <string name="null_activity_name">Пустое активити</string>
 </resources>

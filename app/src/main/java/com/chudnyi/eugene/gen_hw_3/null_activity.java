@@ -19,7 +19,7 @@ public class null_activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_null_01);
 
-        //таблица
+        //таблица во фрагменте
         data = new String[ 1200 ];
         for (int i = 0; i < data.length; i++) {
             data[i] = "" + (i + 1);
