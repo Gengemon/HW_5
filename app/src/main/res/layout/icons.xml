@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="1dp"
+    android:layout_width="match_parent"
+    android:layout_height="110dp"
+    android:background="@android:color/black"
+    android:orientation="vertical"
+    android:padding="4dp" >
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="24dp"
+        android:background="@android:color/black"
+        android:orientation="horizontal"
+        android:padding="0dp"
+        >
+        <TextView
+            android:id="@+id/app_item_number"
+            android:layout_width="20dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:padding="0dp"
+            android:textColor="@android:color/white"
+            android:textSize="7dp"
+            />
+        <ImageView
+            android:id="@+id/app_item_image_delete"
+            android:layout_width="24dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:padding="0dp"
+            android:src="@android:drawable/ic_delete"
+            android:visibility="visible"
+            android:onClick="button_image_delete"
+            />
+    </RelativeLayout>
+
+
+    <ImageView
+        android:id="@+id/app_item_image"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+         />
+
+    <TextView
+        android:id="@+id/app_item_text"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:padding="0dp"
+        android:textColor="@android:color/holo_green_light"
+        />
+
+</LinearLayout>
