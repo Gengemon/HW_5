@@ -18,7 +18,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".null_activity"
+        <activity android:name=".ActivityEmpty"
             android:label="@string/null_activity_name">
         </activity>
     </application>

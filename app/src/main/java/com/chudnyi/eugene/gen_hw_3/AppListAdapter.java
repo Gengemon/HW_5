@@ -78,11 +78,11 @@ public class AppListAdapter extends BaseAdapter {
         return view;
     }
 
-    static class ViewHolder {
-        private TextView tvAppLabel;
-        private TextView tvAppLabelNumber;
-        private ImageView ivAppIcon;
-        private ImageView ivAppIconDelete;
+    class ViewHolder {
+         TextView tvAppLabel;
+         TextView tvAppLabelNumber;
+         ImageView ivAppIcon;
+         ImageView ivAppIconDelete;
     }
 
     public void SetVisibleDelete() {

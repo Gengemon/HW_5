@@ -10,22 +10,21 @@ import android.widget.GridView;
 /**
  * Created by Gengemon on 20.12.2015.
  */
-public class null_activity extends AppCompatActivity {
-    GridView gvMain;
-    ArrayAdapter<String> adapter;
-    String[] data;
+public class ActivityEmpty extends AppCompatActivity {
+    private GridView gvMain;
+    private ArrayAdapter<String> adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.layout_null_01);
+        setContentView(R.layout.activity_empty);
 
-        //таблица во фрагменте
-        data = new String[ 1200 ];
+        //table with test data
+        String[] data = new String[ 1200 ];
         for (int i = 0; i < data.length; i++) {
             data[i] = "" + (i + 1);
         }
-        adapter = new ArrayAdapter<String>(this, R.layout.layout_grid_01, R.id.textGreed, data);
-        gvMain = (GridView) findViewById(R.id.grid01);
+        adapter = new ArrayAdapter<String>(this, R.layout.grid, R.id.textGreed, data);
+        gvMain = (GridView) findViewById(R.id.grid);
         gvMain.setAdapter(adapter);
 
         if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT)

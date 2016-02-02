@@ -13,8 +13,10 @@
     <GridView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/grid01"
+        android:id="@+id/grid"
         android:layout_marginTop="2dp"
+        android:verticalSpacing="2dp"
+        android:horizontalSpacing="2dp"
         >
     </GridView>
 </LinearLayout>
