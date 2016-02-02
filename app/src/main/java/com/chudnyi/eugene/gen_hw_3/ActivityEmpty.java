@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.ArrayAdapter;
 import android.widget.GridView;
 
+import com.chudnyi.eugene.gen_hw_3.Const;
 /**
  * Created by Gengemon on 20.12.2015.
  */
@@ -28,11 +29,9 @@ public class ActivityEmpty extends AppCompatActivity {
         gvMain.setAdapter(adapter);
 
         if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT)
-            gvMain.setNumColumns(3);
+            gvMain.setNumColumns(Const.GRID_VERTICAL_COLUMNS);
         else
-            gvMain.setNumColumns(5);
-        gvMain.setVerticalSpacing(2);
-        gvMain.setHorizontalSpacing(2);
+            gvMain.setNumColumns(Const.GRID_HORIZONTAL_COLUMNS);
     }
 
 

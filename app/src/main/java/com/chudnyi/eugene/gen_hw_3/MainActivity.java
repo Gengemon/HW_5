@@ -16,11 +16,10 @@ import android.widget.GridView;
 import android.widget.Toast;
 
 import java.util.List;
+import com.chudnyi.eugene.gen_hw_3.Const;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final int GRID_VERTICAL_COLUMNS = 3;
-    private static final int GRID_HORIZONTAL_COLUMNS = 5;
 
     private GridView gvApplications;
     private AppListAdapter appListAdapter;
@@ -46,9 +45,9 @@ public class MainActivity extends AppCompatActivity {
         gvApplications = (GridView) findViewById(R.id.grid);
         gvApplications.setAdapter(appListAdapter);
         if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT)
-            gvApplications.setNumColumns(GRID_VERTICAL_COLUMNS);
+            gvApplications.setNumColumns(Const.GRID_VERTICAL_COLUMNS);
         else
-            gvApplications.setNumColumns(GRID_HORIZONTAL_COLUMNS);
+            gvApplications.setNumColumns(Const.GRID_HORIZONTAL_COLUMNS);
     }
 
     public void button_call_click(View v){
