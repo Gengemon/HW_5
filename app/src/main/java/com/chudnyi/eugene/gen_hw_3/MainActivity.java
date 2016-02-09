@@ -44,48 +44,34 @@ public class MainActivity extends AppCompatActivity {
         fillListAdapter();
         gvApplications = (GridView) findViewById(R.id.grid);
         gvApplications.setAdapter(appListAdapter);
-        if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT)
-            gvApplications.setNumColumns(Const.GRID_VERTICAL_COLUMNS);
-        else
-            gvApplications.setNumColumns(Const.GRID_HORIZONTAL_COLUMNS);
     }
 
     public void button_call_click(View v){
-        Toast.makeText(getApplicationContext(),"Open Phone",Toast.LENGTH_SHORT).show();
-
         Intent intentCall = new Intent(Intent.ACTION_DIAL);
         startActivity(intentCall);
     }
     public void button_program_click(View v){
-        Toast.makeText(getApplicationContext(),"Applications",Toast.LENGTH_SHORT).show();
     }
 
     public void button_go_click(View v){
-        Toast.makeText(getApplicationContext(),"Open SMS",Toast.LENGTH_SHORT).show();
-
         Intent intentSMS = new Intent(Intent.ACTION_SENDTO);
         intentSMS.setData(Uri.parse("smsto:"));
         startActivity(intentSMS);
     }
 
     public void button_image_delete(View v){
-        Toast.makeText(getApplicationContext(),"Delete "+v.getId(),Toast.LENGTH_SHORT).show();
         v.setVisibility(View.INVISIBLE);
     }
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
         if (id == R.id.start_empty_activity){
@@ -100,13 +86,8 @@ public class MainActivity extends AppCompatActivity {
         }
 
         if (id == R.id.action_delete){
-//            View view=null;
-//            view=view.findViewById(R.id.app_item_image);
-//            view.setVisibility(View.VISIBLE);
-            //appListAdapter.getItem(1)
             appListAdapter.SetVisibleDelete();
             gvApplications.setAdapter(appListAdapter);
-            Toast.makeText(this, "", Toast.LENGTH_LONG).show();
         }
 
         return super.onOptionsItemSelected(item);

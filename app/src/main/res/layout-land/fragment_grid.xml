@@ -13,7 +13,7 @@
         android:layout_marginTop="@dimen/padding_item"
         android:verticalSpacing="@dimen/padding_item"
         android:horizontalSpacing="@dimen/padding_item"
-        android:numColumns="3"
+        android:numColumns="5"
         >
     </GridView>
 </LinearLayout>

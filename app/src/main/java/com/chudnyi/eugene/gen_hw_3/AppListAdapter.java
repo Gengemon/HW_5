@@ -73,7 +73,6 @@ public class AppListAdapter extends BaseAdapter {
         viewHolder.tvAppLabelNumber.setText("" + (position + 1));
         viewHolder.ivAppIcon.setImageDrawable(app.loadIcon(pm));
         viewHolder.ivAppIconDelete.setVisibility(visible_delete);
-        //viewHolder.tvAppLabel.setTextColor(Color.rgb(200, 0, 0));
 
         return view;
     }
