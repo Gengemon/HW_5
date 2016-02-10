@@ -12,17 +12,23 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.GridView;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import java.util.List;
 import com.chudnyi.eugene.gen_hw_3.Const;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
 
     private GridView gvApplications;
     private AppListAdapter appListAdapter;
+
+    private ImageButton btnLaunchPhone;
+    private Button btnLaunchApp;
+    private ImageButton btnLaunchSMS;
 
     private void fillListAdapter()
     {
@@ -44,19 +50,13 @@ public class MainActivity extends AppCompatActivity {
         fillListAdapter();
         gvApplications = (GridView) findViewById(R.id.grid);
         gvApplications.setAdapter(appListAdapter);
-    }
 
-    public void button_call_click(View v){
-        Intent intentCall = new Intent(Intent.ACTION_DIAL);
-        startActivity(intentCall);
-    }
-    public void button_program_click(View v){
-    }
-
-    public void button_go_click(View v){
-        Intent intentSMS = new Intent(Intent.ACTION_SENDTO);
-        intentSMS.setData(Uri.parse("smsto:"));
-        startActivity(intentSMS);
+        btnLaunchPhone = (ImageButton) findViewById(R.id.button_phone);
+        btnLaunchApp = (Button) findViewById(R.id.button_app);
+        btnLaunchSMS = (ImageButton) findViewById(R.id.button_sms);
+        btnLaunchPhone.setOnClickListener(this);
+        btnLaunchApp.setOnClickListener(this);
+        btnLaunchSMS.setOnClickListener(this);
     }
 
     public void button_image_delete(View v){
@@ -94,4 +94,21 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.button_phone:
+                Intent intentCall = new Intent(Intent.ACTION_DIAL);
+                startActivity(intentCall);
+                break;
+            case R.id.button_app:
+                Toast.makeText(getApplicationContext(),R.string.applications,Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.button_sms:
+                Intent intentSMS = new Intent(Intent.ACTION_SENDTO);
+                intentSMS.setData(Uri.parse("smsto:"));
+                startActivity(intentSMS);
+                break;
+        }
+    }
 }

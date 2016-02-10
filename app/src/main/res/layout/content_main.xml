@@ -53,19 +53,17 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:src="@android:drawable/stat_sys_phone_call"
-                android:id="@+id/button_call"
-                android:onClick="button_call_click"
+                android:id="@+id/button_phone"
                 android:padding = "0dp"
                 android:background="@drawable/button_selector"
                 />
             <Button
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:text="Приложения"
+                android:text="@string/applications"
                 android:textColor="@android:color/white"
                 android:textSize="10sp"
-                android:id="@+id/button_program"
-                android:onClick="button_program_click"
+                android:id="@+id/button_app"
                 android:padding = "0dp"
                 android:background="@drawable/button_selector"
                 />
@@ -73,8 +71,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:src="@android:drawable/ic_media_play"
-                android:id="@+id/button_go"
-                android:onClick="button_go_click"
+                android:id="@+id/button_sms"
                 android:padding = "0dp"
                 android:background="@drawable/button_selector"
                 />

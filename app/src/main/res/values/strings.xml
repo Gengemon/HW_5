@@ -2,4 +2,5 @@
     <string name="app_name">HW 5</string>
     <string name="action_settings">SETTINGS</string>
     <string name="null_activity_name">Пустое активити</string>
+    <string name="applications">ПРИЛОЖЕНИЯ</string>
 </resources>
