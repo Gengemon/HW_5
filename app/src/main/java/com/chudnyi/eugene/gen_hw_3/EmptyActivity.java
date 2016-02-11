@@ -8,9 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.GridView;
 
 import com.chudnyi.eugene.gen_hw_3.Const;
-/**
- * Created by Gengemon on 20.12.2015.
- */
+
 public class EmptyActivity extends AppCompatActivity {
     private GridView gvMain;
     private ArrayAdapter<String> adapter;
