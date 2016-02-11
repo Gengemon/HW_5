@@ -11,7 +11,7 @@ import com.chudnyi.eugene.gen_hw_3.Const;
 /**
  * Created by Gengemon on 20.12.2015.
  */
-public class ActivityEmpty extends AppCompatActivity {
+public class EmptyActivity extends AppCompatActivity {
     private GridView gvMain;
     private ArrayAdapter<String> adapter;
     @Override
@@ -34,12 +34,5 @@ public class ActivityEmpty extends AppCompatActivity {
             gvMain.setNumColumns(Const.GRID_HORIZONTAL_COLUMNS);
     }
 
-
-//    @Override
-//    public void onBackPressed() {
-//        //setContentView(R.layout.activity_main);
-//
-//        finish();
-//    }
 
 }

@@ -1,4 +1,4 @@
-package com.chudnyi.eugene.gen_hw_3.table_item;
+package com.chudnyi.eugene.gen_hw_3.vidges;
 
 import android.content.Context;
 import android.util.AttributeSet;

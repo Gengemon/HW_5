@@ -1,9 +1,6 @@
 package com.chudnyi.eugene.gen_hw_3;
 
 import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.content.pm.ResolveInfo;
-import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.Settings;
@@ -17,9 +14,6 @@ import android.widget.GridView;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
-import java.util.List;
-import com.chudnyi.eugene.gen_hw_3.Const;
-
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
 
@@ -30,14 +24,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button btnLaunchApp;
     private ImageButton btnLaunchSMS;
 
-    private void fillListAdapter()
-    {
-        final PackageManager pm = getPackageManager();
-        Intent intent = new Intent(Intent.ACTION_MAIN, null);
-        intent.addCategory(Intent.CATEGORY_LAUNCHER);
-        List<ResolveInfo> packages = pm.queryIntentActivities(intent, PackageManager.GET_META_DATA);
-        appListAdapter = new AppListAdapter(this, pm, packages);
-    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,7 +33,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        fillListAdapter();
+        AppDataList appDataList = new AppDataList(getPackageManager());
+
+        appListAdapter = new AppListAdapter(this, appDataList);
+
         gvApplications = (GridView) findViewById(R.id.grid);
         gvApplications.setAdapter(appListAdapter);
 
@@ -75,7 +64,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         int id = item.getItemId();
 
         if (id == R.id.start_empty_activity){
-            Intent intent01 = new Intent(MainActivity.this, ActivityEmpty.class);
+            Intent intent01 = new Intent(MainActivity.this, EmptyActivity.class);
             startActivity(intent01);
         }
 

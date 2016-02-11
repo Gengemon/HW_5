@@ -20,7 +20,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".ActivityEmpty"
+        <activity android:name=".EmptyActivity"
             android:label="@string/null_activity_name">
         </activity>
     </application>

@@ -1,13 +1,7 @@
 package com.chudnyi.eugene.gen_hw_3;
 
 
-import java.util.List;
-
 import android.content.Context;
-import android.content.pm.ApplicationInfo;
-import android.content.pm.PackageManager;
-import android.content.pm.ResolveInfo;
-import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,14 +11,12 @@ import android.widget.TextView;
 
 public class AppListAdapter extends BaseAdapter {
 
-    private List<ResolveInfo> packages;
     private LayoutInflater inflater;
-    private PackageManager pm;
     private int visible_delete=View.INVISIBLE;
+    AppDataList appDataList;
 
-    public AppListAdapter(Context context, PackageManager pm, List<ResolveInfo> packages) {
-        this.packages = packages;
-        this.pm = pm;
+    public AppListAdapter(Context context, AppDataList appDataList) {
+        this.appDataList = appDataList;
 
         inflater = (LayoutInflater) context
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -32,20 +24,19 @@ public class AppListAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-
-        return packages.size();
+        return appDataList.getSize();
     }
 
     @Override
-    public ResolveInfo getItem(int p1) {
+    public Object getItem(int position) {
 
-        return packages.get(p1);
+        return appDataList.getItem(position);
     }
 
     @Override
-    public long getItemId(int p1) {
+    public long getItemId(int position) {
 
-        return p1;
+        return position;
     }
 
     @Override
@@ -67,11 +58,9 @@ public class AppListAdapter extends BaseAdapter {
             viewHolder = (ViewHolder) view.getTag();
         }
 
-        ResolveInfo app = packages.get(position);
-
-        viewHolder.tvAppLabel.setText(app.loadLabel(pm).toString());
+        viewHolder.tvAppLabel.setText(appDataList.getItem(position).getAppName());
         viewHolder.tvAppLabelNumber.setText("" + (position + 1));
-        viewHolder.ivAppIcon.setImageDrawable(app.loadIcon(pm));
+        viewHolder.ivAppIcon.setImageDrawable(appDataList.getItem(position).getAppIcon());
         viewHolder.ivAppIconDelete.setVisibility(visible_delete);
 
         return view;
