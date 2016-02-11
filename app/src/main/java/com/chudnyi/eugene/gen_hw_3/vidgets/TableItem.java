@@ -1,4 +1,4 @@
-package com.chudnyi.eugene.gen_hw_3.vidges;
+package com.chudnyi.eugene.gen_hw_3.vidgets;
 
 import android.content.Context;
 import android.util.AttributeSet;
